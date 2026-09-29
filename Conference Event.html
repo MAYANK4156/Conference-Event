@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI & ML Conference 2027</title>
+
+    <style>
+
+        /* =========================
+           BASIC SETTINGS
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(123, 47, 247, 0.25), transparent 30%),
+                radial-gradient(circle at 90% 10%, rgba(0, 229, 255, 0.20), transparent 30%),
+                radial-gradient(circle at 50% 90%, rgba(255, 0, 153, 0.15), transparent 30%),
+                #070714;
+
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 8%;
+
+            background: rgba(7, 7, 20, 0.65);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+
+            background: linear-gradient(
+                90deg,
+                #00e5ff,
+                #8a2be2,
+                #ff00aa
+            );
+
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00e5ff;
+        }
+
+        /* =========================
+           HERO SECTION
+        ========================== */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 120px 8% 80px;
+
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 950px;
+        }
+
+        .tag {
+            display: inline-block;
+
+            padding: 9px 20px;
+            border-radius: 50px;
+
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(0,229,255,0.4);
+
+            color: #00e5ff;
+
+            font-size: 14px;
+            margin-bottom: 25px;
+
+            box-shadow: 0 0 25px rgba(0,229,255,0.15);
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 85px);
+            line-height: 1.05;
+            margin-bottom: 25px;
+
+            background: linear-gradient(
+                90deg,
+                #ffffff,
+                #00e5ff,
+                #9b5cff,
+                #ff4ecd
+            );
+
+            -webkit-background-clip: text;
+            color: transparent;
+
+            animation: glow 4s infinite alternate;
+        }
+
+        @keyframes glow {
+
+            from {
+                filter: drop-shadow(0 0 5px rgba(0,229,255,0.2));
+            }
+
+            to {
+                filter: drop-shadow(0 0 25px rgba(180,70,255,0.5));
+            }
+        }
+
+        .hero p {
+            color: #bdbdcc;
+            font-size: 18px;
+            max-width: 750px;
+            margin: auto;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            margin-top: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 14px 30px;
+            margin: 8px;
+
+            border-radius: 50px;
+
+            text-decoration: none;
+            color: white;
+
+            font-weight: bold;
+
+            background: linear-gradient(
+                90deg,
+                #7b2ff7,
+                #00c6ff
+            );
+
+            box-shadow:
+                0 0 20px rgba(0,198,255,0.25);
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px) scale(1.03);
+
+            box-shadow:
+                0 0 35px rgba(0,229,255,0.55);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #7b2ff7;
+        }
+
+        /* =========================
+           GENERAL SECTION
+        ========================== */
+
+        section {
+            padding: 100px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title span {
+            color: #00e5ff;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            margin-top: 10px;
+
+            background: linear-gradient(
+                90deg,
+                white,
+                #a96cff,
+                #00e5ff
+            );
+
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about-box {
+            max-width: 1000px;
+            margin: auto;
+
+            padding: 40px;
+
+            background: rgba(255,255,255,0.05);
+
+            border: 1px solid rgba(255,255,255,0.1);
+
+            border-radius: 25px;
+
+            backdrop-filter: blur(15px);
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        .about-box p {
+            color: #c7c7d5;
+            line-height: 1.9;
+            font-size: 17px;
+            text-align: center;
+        }
+
+        /* =========================
+           SCHEDULE
+        ========================== */
+
+        .schedule-container {
+            max-width: 1100px;
+            margin: auto;
+
+            overflow-x: auto;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 0 40px rgba(123,47,247,0.15);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+
+            background: rgba(255,255,255,0.04);
+            backdrop-filter: blur(15px);
+        }
+
+        th {
+            background:
+                linear-gradient(
+                    90deg,
+                    #6a11cb,
+                    #2575fc
+                );
+
+            padding: 20px;
+            font-size: 16px;
+        }
+
+        td {
+            padding: 20px;
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.08);
+
+            color: #d3d3df;
+        }
+
+        tr {
+            transition: 0.3s;
+        }
+
+        tr:hover {
+            background: rgba(0,229,255,0.08);
+        }
+
+        /* =========================
+           SPEAKERS
+        ========================== */
+
+        .speakers {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(230px, 1fr));
+
+            gap: 25px;
+
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .speaker-card {
+            padding: 35px 25px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.08),
+                    rgba(255,255,255,0.02)
+                );
+
+            border: 1px solid rgba(255,255,255,0.1);
+
+            border-radius: 25px;
+
+            transition: 0.4s;
+        }
+
+        .speaker-card:hover {
+            transform: translateY(-10px);
+
+            border-color: #00e5ff;
+
+            box-shadow:
+                0 15px 40px rgba(0,229,255,0.15);
+        }
+
+        .speaker-icon {
+            width: 80px;
+            height: 80px;
+
+            margin: auto;
+            margin-bottom: 20px;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 35px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #7b2ff7,
+                    #00e5ff
+                );
+
+            box-shadow:
+                0 0 30px rgba(0,229,255,0.25);
+        }
+
+        .speaker-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .speaker-card p {
+            color: #aaaabc;
+            font-size: 14px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact-container {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        form {
+            padding: 40px;
+
+            background: rgba(255,255,255,0.05);
+
+            border: 1px solid rgba(255,255,255,0.1);
+
+            border-radius: 25px;
+
+            backdrop-filter: blur(15px);
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ddd;
+        }
+
+        input,
+        textarea {
+
+            width: 100%;
+
+            padding: 15px;
+
+            border: 1px solid rgba(255,255,255,0.15);
+
+            border-radius: 12px;
+
+            background: rgba(255,255,255,0.06);
+
+            color: white;
+
+            outline: none;
+
+            transition: 0.3s;
+        }
+
+        input:focus,
+        textarea:focus {
+
+            border-color: #00e5ff;
+
+            box-shadow:
+                0 0 15px rgba(0,229,255,0.15);
+        }
+
+        textarea {
+            height: 130px;
+            resize: none;
+        }
+
+        form button {
+
+            width: 100%;
+
+            padding: 15px;
+
+            border: none;
+
+            border-radius: 50px;
+
+            color: white;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #7b2ff7,
+                    #00e5ff,
+                    #ff00aa
+                );
+
+            background-size: 200%;
+
+            transition: 0.4s;
+        }
+
+        form button:hover {
+            background-position: right;
+            box-shadow:
+                0 0 30px rgba(0,229,255,0.35);
+
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+
+            text-align: center;
+
+            padding: 30px;
+
+            background: #05050f;
+
+            border-top:
+                1px solid rgba(255,255,255,0.08);
+
+            color: #888899;
+        }
+
+        footer strong {
+            color: #00e5ff;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media(max-width: 700px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .hero {
+                padding-top: 140px;
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+
+            .about-box,
+            form {
+                padding: 25px;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <nav>
+
+        <div class="logo">
+            AI × ML 2027
+        </div>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#speakers">Speakers</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <div class="tag">
+                ✦ INTERNATIONAL CONFERENCE • 2027
+            </div>
+
+            <h1>
+                Artificial Intelligence
+                <br>
+                & Machine Learning
+            </h1>
+
+            <p>
+                International Conference on Artificial Intelligence
+                and Machine Learning Technique 2027. Discover ideas,
+                innovations and technologies shaping the intelligent
+                future.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#schedule" class="btn">
+                    Explore Schedule →
+                </a>
+
+                <a href="#contact" class="btn btn-outline">
+                    Register Now
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section id="about">
+
+        <div class="section-title">
+
+            <span>ABOUT THE EVENT</span>
+
+            <h2>Where Intelligence Meets Innovation</h2>
+
+        </div>
+
+        <div class="about-box">
+
+            <p>
+                The International Conference on Artificial Intelligence
+                and Machine Learning Technique 2027 brings together
+                researchers, students, professionals and technology
+                enthusiasts from around the world.
+                <br><br>
+
+                The conference focuses on emerging AI technologies,
+                machine learning techniques, intelligent systems and
+                real-world applications that are shaping the future
+                of technology.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SCHEDULE
+    ========================== -->
+
+    <section id="schedule">
+
+        <div class="section-title">
+
+            <span>EVENT TIMELINE</span>
+
+            <h2>Conference Schedule</h2>
+
+        </div>
+
+
+        <div class="schedule-container">
+
+            <table>
+
+                <tr>
+
+                    <th>Time</th>
+                    <th>Session</th>
+                    <th>Speaker</th>
+
+                </tr>
+
+                <tr>
+
+                    <td>09:00 AM - 10:00 AM</td>
+
+                    <td>
+                        Registration & Welcome
+                    </td>
+
+                    <td>
+                        Organizing Committee
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>10:00 AM - 11:00 AM</td>
+
+                    <td>
+                        Future of Artificial Intelligence
+                    </td>
+
+                    <td>
+                        Dr. Raj Sharma
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>11:30 AM - 12:30 PM</td>
+
+                    <td>
+                        Machine Learning Techniques
+                    </td>
+
+                    <td>
+                        Dr. Priya Mehta
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>02:00 PM - 03:00 PM</td>
+
+                    <td>
+                        AI in Real World Applications
+                    </td>
+
+                    <td>
+                        Dr. Amit Verma
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>03:30 PM - 04:30 PM</td>
+
+                    <td>
+                        Panel Discussion
+                    </td>
+
+                    <td>
+                        All Speakers
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SPEAKERS
+    ========================== -->
+
+    <section id="speakers">
+
+        <div class="section-title">
+
+            <span>MEET THE EXPERTS</span>
+
+            <h2>Featured Speakers</h2>
+
+        </div>
+
+
+        <div class="speakers">
+
+            <div class="speaker-card">
+
+                <div class="speaker-icon">
+                    🤖
+                </div>
+
+                <h3>Dr. Raj Sharma</h3>
+
+                <p>
+                    Artificial Intelligence Researcher
+                </p>
+
+            </div>
+
+
+            <div class="speaker-card">
+
+                <div class="speaker-icon">
+                    🧠
+                </div>
+
+                <h3>Dr. Priya Mehta</h3>
+
+                <p>
+                    Machine Learning Specialist
+                </p>
+
+            </div>
+
+
+            <div class="speaker-card">
+
+                <div class="speaker-icon">
+                    ⚡
+                </div>
+
+                <h3>Dr. Amit Verma</h3>
+
+                <p>
+                    AI Technology Expert
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact">
+
+        <div class="section-title">
+
+            <span>GET IN TOUCH</span>
+
+            <h2>Contact Us</h2>
+
+        </div>
+
+
+        <div class="contact-container">
+
+            <form>
+
+                <div class="input-group">
+
+                    <label for="name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="message">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        placeholder="Write your message..."
+                    ></textarea>
+
+                </div>
+
+
+                <button type="submit">
+                    SEND MESSAGE ✦
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2027
+            <strong>International Conference on AI & ML</strong>
+            | All Rights Reserved
+        </p>
+
+    </footer>
+
+
+</body>
+</html>
